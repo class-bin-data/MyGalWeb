@@ -1,0 +1,22 @@
+intro:第一天午休|你来到了寝室 -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+changeBg:bedroom.jpg;
+秦HF:嗨，你要和尝一尝我带的牛奶吗？ -notend;
+choose:好的，谢谢:die1 |不用，谢谢:ct1 ;
+label:die1;
+{studentname}:*喝了下去 -notend;
+wait:3000;
+秦HF:哦不~，那是我的孩子啊 -notend;
+wait:2000;
+{studentname}:什么？！ -notend;
+wait:1000;
+intro:你喝了同学给的不明液体|坏结局 -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+unlockCg:milk1.png;
+end;
+label:ct1
+:你拒绝了他的牛奶 -notend;
+wait:1000;
+秦HF:好吧（失落） -notend;
+:你掏出了自己带的零食 -notend;
+司ZM:能分我一点吗？
+intro:未完待续;
+end;

@@ -1,0 +1,9 @@
+Game_name:梦回初中01;
+Game_key:YYYGAL260117;
+Title_img:WebGAL_New_Enter_Image.webp;
+Title_bgm:s_Title.mp3;
+Textbox_theme:imss;
+Description:回到了五中附中;
+Default_Language:zh_CN;
+Enable_Appreciation:true;
+Package_name:YiYueCloudGal260117;

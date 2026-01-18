@@ -1,0 +1,66 @@
+; 初始场景，以及特效演示
+label:day1;
+bgm:none;
+intro:第一天：|    入学 -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+changeBg:classroom.jpg;
+:第一节课，老师要求大家自我介绍 ;
+:现在到你了，;
+choose:“各位老表们好”:die1|大家好...（常规介绍）:ct1;
+
+label:die1;
+intro:由于自我介绍过于奔放，你被赶了出去|  中等结局？ -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+unlockCg:topclassdown.png;
+end;
+
+label:ct1;
+getUserInput:studentname -title=我叫...（填写你的名字） -buttonText=提交;
+intro:很安全，你度过了自我介绍 -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+:这是开学第一节音乐课 -notend;
+wait:2000;
+汪音乐:大家好，我是你们的音乐老师 -notend;
+wait:2000;
+汪音乐:我想看看大家有无音乐基础 -notend;
+wait:2000;
+汪音乐:有谁想要试试吗？ -notend;
+wait:2000;
+陆YM:我，老师，我！ -notend;
+wait:2000;
+汪音乐:上来吧，勇敢的同学 -notend;
+wait:2000;
+张BH:哦，我善良的同桌啊，我建议你做好放音爆准备 -notend;
+wait:2000
+choose:询问“为什么”:die2|（闭嘴捂耳）:ct2;
+label:die2
+{studentname}:为什么 -notend;
+wait:500;
+陆YM:（雷鸣一般的歌声）呀咿呀咿呀咿呀~ -notend;
+wait:1000;
+intro:你被核弹一般的歌声震碎耳膜|  中等结局？ -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+unlockCg:eradown.png;
+end;
+
+label:ct2;
+:你安全度过音乐课;
+intro:中午|等待排队吃午饭ing... -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+:你来到了一棵树下;
+setVar:a=100;
+choose:靠上去:ct3|什么都不做，老实排队:ct4|扣树皮:ct5;
+
+label:ct4;
+:树上掉下一片叶子，恰巧砸中了你（-10）;
+setVar:a=a-10;
+jumpLabel:ct6;
+
+label:ct5;
+:刚扣下一片树皮，被生物老师教训了一顿（-20）;
+沈生物:你知道这样对环境破坏多大吗？！;
+setVar:a=a-20;
+jumpLabel:ct6;
+
+label:ct3;
+{studentname}:真舒服~
+setVar:a=a+10;
+jumpLabel:ct6;
+label:ct6;
+intro:吃饭还好|解锁新场景--寝室 -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+changeScene:1noon.txt -notend;
